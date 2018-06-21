@@ -6,27 +6,19 @@
 
 ## Environment
 
-`Node >= 6`
+要安装npm和node
 
 ## Start
 
- - Clone or download this repository
- - Enter your local directory, and install dependencies:
-
-``` bash
-yarn
-```
+ 将项目克隆到本地
 
 ## Develop
-
-``` bash
-# serve with hot reload at localhost:8010
-npm run dev
-```
+ 
 
 ## Build
 
-``` bash
-# build for production with minification
-npm run build
-```
+ 1.cmd 使用cd命令进入项目所在文件夹  
+ 2.npm install  
+ 3.npm run dev
+ 4.打开浏览器输入http://localhost:8010 访问
+ 
