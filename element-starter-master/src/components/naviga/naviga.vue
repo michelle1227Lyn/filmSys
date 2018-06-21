@@ -12,8 +12,8 @@
                         active-text-color="#7b7878"
                       >
                     <el-menu-item index="1">首页</el-menu-item>
-                    <el-menu-item index="2">电影</el-menu-item>
-                    <el-menu-item index="3">榜单</el-menu-item>
+                    <el-menu-item index="2">电影管理</el-menu-item>
+                    <el-menu-item index="3">场次管理</el-menu-item>
                     <!--<el-submenu index="3">-->
                         <!--<template slot="title">榜单</template>-->
                         <!--<el-menu-item index="3-1">热映口碑榜</el-menu-item>-->
@@ -22,9 +22,9 @@
                         <!--<el-menu-item index="3-4">北美票房榜</el-menu-item>-->
                         <!--<el-menu-item index="3-5">Top100榜</el-menu-item>-->
                     <!--</el-submenu>-->
-                    <el-menu-item index="4">热点</el-menu-item>
-                    <el-menu-item index="5">社区</el-menu-item>
-                    <el-menu-item index="6" class="rf">个人中心</el-menu-item>
+                    <el-menu-item index="4">影厅管理</el-menu-item>
+                    <el-menu-item index="5">销售管理</el-menu-item>
+                    <el-menu-item index="6" class="rf">商家登录</el-menu-item>
 
                 </el-menu>
             </el-header>
