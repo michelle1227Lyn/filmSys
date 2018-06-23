@@ -12,16 +12,15 @@
                         active-text-color="#7b7878"
                       >
                     <el-menu-item index="1">首页</el-menu-item>
-                    <el-menu-item index="2">电影管理</el-menu-item>
+                    <el-submenu index="2">
+                        <template slot="title">电影管理</template>
+                        <el-menu-item index="2-1">正在热映</el-menu-item>
+                        <el-menu-item index="2-2">即将上映</el-menu-item>
+                        <el-menu-item index="2-3">已下架</el-menu-item>
+                    </el-submenu>
+                    <!--<el-menu-item index="2">电影管理</el-menu-item>-->
                     <el-menu-item index="3">场次管理</el-menu-item>
-                    <!--<el-submenu index="3">-->
-                        <!--<template slot="title">榜单</template>-->
-                        <!--<el-menu-item index="3-1">热映口碑榜</el-menu-item>-->
-                        <!--<el-menu-item index="3-2">最受期待榜</el-menu-item>-->
-                        <!--<el-menu-item index="3-3">国内票房榜</el-menu-item>-->
-                        <!--<el-menu-item index="3-4">北美票房榜</el-menu-item>-->
-                        <!--<el-menu-item index="3-5">Top100榜</el-menu-item>-->
-                    <!--</el-submenu>-->
+
                     <el-menu-item index="4">影厅管理</el-menu-item>
                     <el-menu-item index="5">销售管理</el-menu-item>
                     <el-menu-item index="6" class="rf">商家登录</el-menu-item>
@@ -89,8 +88,16 @@
                         this.$router.push('/Page1');
                         //this.breadcrumbItems  = ['导航一']
                         break;
-                    case '2':
-                        this.$router.push('/Page2');
+                    case '2-1':
+                        this.$router.push('/Page21');
+                        //this.breadcrumbItems  = ['导航二']
+                        break;
+                    case '2-2':
+                        this.$router.push('/Page22');
+                        //this.breadcrumbItems  = ['导航二']
+                        break;
+                    case '2-3':
+                        this.$router.push('/Page23');
                         //this.breadcrumbItems  = ['导航二']
                         break;
                     case '3':
