@@ -4,21 +4,7 @@
         <span>已下架</span>
         <br/>
         <hr/>
-
-        <movieinfo ></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <br/>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <br/><br/>
+        <movieinfo v-for="movie in movies" :key="movie.id"  :movie="movie"> </movieinfo>><br/>
         <div class="block">
             <el-pagination
                     :page-size="20"
@@ -42,8 +28,30 @@
         data () {
             return {
                 filmname:'你的名字'
+                , movies:[]
             }
         },
+        mounted() {
+            // this.loadData();
+            let that = this;
+            this.$http
+                .get(
+                    'api/movie/in_theaters'
+                )
+                .then(function(response) {
+//                        that.tableData = response.data;
+//                        that.tableData.forEach(item => {
+//                            that.totalMoney = that.totalMoney + Number(item.price);
+//                        });
+                    that.movies=response.data.subjects;
+                    console.log(response);
+                    console.log(that.movies);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+        },
+
         components: {
             'movieinfo': movieinfo
         }

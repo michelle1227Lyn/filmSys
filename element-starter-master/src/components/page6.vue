@@ -11,7 +11,7 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false"> 取 消</el-button>
-                <el-button type="primary" @click="dialogFormVisible = false">  登 录</el-button>
+                <el-button type="primary" @click= "logon">  登 录</el-button>
             </div>
         </el-dialog>
 
@@ -32,13 +32,14 @@
                     pass:''
                 },
                 formLabelWidth: '120px',
-                ruleForm2: {
-                    pass: '',
-                    checkPass: '',
-                    age: ''
-            }
+
             };
-        }
+        },
+        methods:{
+            logon: function (event){
+                     this.$router.push('/Page1');
+            }
+        },
 
     };
 

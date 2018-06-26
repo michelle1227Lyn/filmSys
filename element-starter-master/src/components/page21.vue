@@ -4,9 +4,6 @@
         <br/>
         <hr/>
          <movieinfo v-for="movie in movies" :key="movie.id"  :movie="movie"> </movieinfo>
-
-        <br/>
-
         <br/><br/>
         <div class="block">
             <el-pagination
@@ -40,7 +37,6 @@
                     desc: ''
                 },
                 formLabelWidth: '120px',
-                a:"hello",
                 movies:[]
             };
         },

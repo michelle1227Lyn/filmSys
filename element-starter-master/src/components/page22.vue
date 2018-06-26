@@ -1,23 +1,9 @@
 <template>
-
     <div >
         <span>即将上映</span>
         <br/>
         <hr/>
-
-        <movieinfo :prop="filename"></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <br/>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
+        <movieinfo v-for="movie in movies" :key="movie.id"  :movie="movie"> </movieinfo>
         <br/><br/>
         <div class="block">
             <el-pagination
@@ -42,7 +28,28 @@
         data () {
             return {
                 filename:'page222'
+                , movies:[]
             }
+        },
+        mounted() {
+            // this.loadData();
+            let that = this;
+            this.$http
+                .get(
+                    'api/movie/in_theaters'
+                )
+                .then(function(response) {
+//                        that.tableData = response.data;
+//                        that.tableData.forEach(item => {
+//                            that.totalMoney = that.totalMoney + Number(item.price);
+//                        });
+                    that.movies=response.data.subjects;
+                    console.log(response);
+                    console.log(that.movies);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
         },
         components: {
             'movieinfo': movieinfo
