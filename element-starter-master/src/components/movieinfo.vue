@@ -2,17 +2,25 @@
 
         <div class="filmbox">
             <img src="http://p1.meituan.net/movie/3d17aa5ee07f5d66239d8393bcb8fe5196556.jpg@160w_220h_1e_1c">
-            <div class="filmInfo">侏罗纪世界2</div>
-            <div class="but">移除</div>
+            <div class="filmInfo" >{{filename}}</div>
+            <div class="but">{{operation}}</div>
         </div>
 
 </template>
 <script type="text/ecmascript-6">
     export default{
         data(){
-            return {}
+            return {
+                filename:'侏罗纪世界2',//v-model="filename"
+                operation:'下架',　　　 /*如果是page21正在热映界面，则显示的操作按钮是“下架”，
+                                            是page22即将上映界面，则显示的操作按钮是"上映"
+                                                  23已下架                         已下架 ，并且该按钮disable不可选*/
+            }
         }
     }
+
+
+
 </script>
 <style>
     .filmbox .filmInfo{

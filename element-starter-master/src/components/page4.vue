@@ -1,6 +1,6 @@
 <template>
     <div>
-        热点
+        ｎｏｎｅ
     </div>
 </template>
 <script type="text/ecmascript-6">

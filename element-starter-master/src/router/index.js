@@ -4,7 +4,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Page1 from '../components/Page1.vue'
-
 import Page3 from '../components/Page3.vue'
 import Page4 from '../components/Page4.vue'
 import Page5 from '../components/Page5.vue'

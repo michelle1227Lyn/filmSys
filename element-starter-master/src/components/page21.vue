@@ -1,26 +1,6 @@
 <template>
-
     <div >
         <span>正在热映</span>
-        <!--<el-button type="text" @click="dialogFormVisible = true" class="button">新增</el-button>-->
-
-        <!--<el-dialog title="收货地址" :visible.sync="dialogFormVisible">-->
-            <!--<el-form :model="form">-->
-                <!--<el-form-item label="活动名称" :label-width="formLabelWidth">-->
-                    <!--<el-input v-model="form.name" auto-complete="off"></el-input>-->
-                <!--</el-form-item>-->
-                <!--<el-form-item label="活动区域" :label-width="formLabelWidth">-->
-                    <!--<el-select v-model="form.region" placeholder="请选择活动区域">-->
-                        <!--<el-option label="区域一" value="shanghai"></el-option>-->
-                        <!--<el-option label="区域二" value="beijing"></el-option>-->
-                    <!--</el-select>-->
-                <!--</el-form-item>-->
-            <!--</el-form>-->
-            <!--<div slot="footer" class="dialog-footer">-->
-                <!--<el-button @click="dialogFormVisible = false">取 消</el-button>-->
-                <!--<el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>-->
-            <!--</div>-->
-        <!--</el-dialog>-->
         <br/>
         <hr/>
         <movieinfo></movieinfo>
@@ -48,11 +28,6 @@
     </div>
 </template>
 <script type="text/ecmascript-6">
-    //    export default{
-    //        data(){
-    //            return {}
-    //        }
-    //    }
 
     //创建实例
     import movieinfo from './movieinfo.vue';
@@ -73,8 +48,32 @@
                     resource: '',
                     desc: ''
                 },
-                formLabelWidth: '120px'
+                formLabelWidth: '120px',
+                a:"hello"
             };
+        },
+        methods:{
+            mounted() {
+                this.loadData();
+                let that = this;
+                this.$http
+                    .get(
+                        // http://193.112.94.186:8080
+                        // "http://192.168.1.104:8080/0621/Seller?seller=朵森影院"
+                        "http://193.112.94.186:8080/Seller?seller=朵森影院"
+                    )
+                    .then(function(response) {
+                        that.tableData = response.data;
+                        that.tableData.forEach(item => {
+                            that.totalMoney = that.totalMoney + Number(item.price);
+                        });
+                        console.log(response);
+                        console.log(that.tableData);
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+            }
         },
         components: {
             'movieinfo': movieinfo

@@ -5,7 +5,7 @@
         <br/>
         <hr/>
 
-        <movieinfo></movieinfo>
+        <movieinfo :prop="filename"></movieinfo>
         <movieinfo></movieinfo>
         <movieinfo></movieinfo>
         <movieinfo></movieinfo>
@@ -41,7 +41,7 @@
     export default {
         data () {
             return {
-
+                filename:'page222'
             }
         },
         components: {

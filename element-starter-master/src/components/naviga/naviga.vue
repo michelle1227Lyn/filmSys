@@ -20,8 +20,6 @@
                     </el-submenu>
                     <!--<el-menu-item index="2">电影管理</el-menu-item>-->
                     <el-menu-item index="3">场次管理</el-menu-item>
-
-                    <el-menu-item index="4">影厅管理</el-menu-item>
                     <el-menu-item index="5">销售管理</el-menu-item>
                     <el-menu-item index="6" class="rf">商家登录</el-menu-item>
 
