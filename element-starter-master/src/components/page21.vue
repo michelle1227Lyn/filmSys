@@ -3,19 +3,10 @@
         <span>正在热映</span>
         <br/>
         <hr/>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
+         <movieinfo v-for="movie in movies" :key="movie.id"  :movie="movie"> </movieinfo>
+
         <br/>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
-        <movieinfo></movieinfo>
+
         <br/><br/>
         <div class="block">
             <el-pagination
@@ -49,31 +40,32 @@
                     desc: ''
                 },
                 formLabelWidth: '120px',
-                a:"hello"
+                a:"hello",
+                movies:[]
             };
         },
+        mounted() {
+           // this.loadData();
+           let that = this;
+            this.$http
+                .get(
+                   'api/movie/in_theaters'
+                )
+                .then(function(response) {
+//                        that.tableData = response.data;
+//                        that.tableData.forEach(item => {
+//                            that.totalMoney = that.totalMoney + Number(item.price);
+//                        });
+                    that.movies=response.data.subjects;
+                    console.log(response);
+                    console.log(that.movies);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+        },
         methods:{
-            mounted() {
-                this.loadData();
-                let that = this;
-                this.$http
-                    .get(
-                        // http://193.112.94.186:8080
-                        // "http://192.168.1.104:8080/0621/Seller?seller=朵森影院"
-                        "http://193.112.94.186:8080/Seller?seller=朵森影院"
-                    )
-                    .then(function(response) {
-                        that.tableData = response.data;
-                        that.tableData.forEach(item => {
-                            that.totalMoney = that.totalMoney + Number(item.price);
-                        });
-                        console.log(response);
-                        console.log(that.tableData);
-                    })
-                    .catch(function(error) {
-                        console.log(error);
-                    });
-            }
+
         },
         components: {
             'movieinfo': movieinfo

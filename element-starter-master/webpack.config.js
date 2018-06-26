@@ -56,10 +56,10 @@ module.exports = (options = {}) => ({
   },
   devServer: {
     host: '127.0.0.1',
-    port: 8010,
+    port: 8010,　　　//8010
     proxy: {
       '/api/': {
-        target: 'http://127.0.0.1:8080',
+        target: 'http://api.douban.com/v2/',   //'http://127.0.0.1:8080'
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''

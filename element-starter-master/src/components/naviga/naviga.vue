@@ -3,7 +3,7 @@
         <el-container>
             <el-header>
                 <el-menu
-                        :default-active="activeIndex2"
+
                         class="el-menu-demo"
                         mode="horizontal"
                         @select="handleSelect"
@@ -20,6 +20,7 @@
                     </el-submenu>
                     <!--<el-menu-item index="2">电影管理</el-menu-item>-->
                     <el-menu-item index="3">场次管理</el-menu-item>
+
                     <el-menu-item index="5">销售管理</el-menu-item>
                     <el-menu-item index="6" class="rf">商家登录</el-menu-item>
 
